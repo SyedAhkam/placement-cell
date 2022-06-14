@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bennett.placementcell.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" text="Welcome to Placement Cell!" textAlignment="CENTER">
+      <font>
+         <Font size="22.0" />
+      </font></Label>
+   <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0">
+      <buttons>
+        <Button fx:id="IsStudentButton" onAction="#onIsStudentButtonClick" mnemonicParsing="false" text="I am a student" />
+        <Button fx:id="IsCompanyButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="I am a company" textAlignment="CENTER" />
+      </buttons>
+   </ButtonBar>
+</VBox>
