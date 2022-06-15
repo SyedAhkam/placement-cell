@@ -30,7 +30,7 @@ public class DBUtilities {
                 String userName = properties.getProperty("userName");
                 String password = properties.getProperty("password");
 
-                Class.forName(dbDriver).newInstance();
+//                Class.forName(dbDriver).newInstance();
                 dbConnection = DriverManager.getConnection(connectionUrl, userName, password);
             }
             catch (Exception e)

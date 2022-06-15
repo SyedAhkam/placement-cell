@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ListView?>
+<?import com.bennett.placementcell.CompanySuggestionsController?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bennett.placementcell.CompanySuggestionsController">
-   <children>
-      <ScrollPane layoutX="-1.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0">
-         <content>
-            <ListView prefHeight="383.0" prefWidth="601.0" />
-         </content></ScrollPane>
-   </children>
-</AnchorPane>
+<GridPane xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+   <ListView fx:id="listView"/>
+</GridPane>

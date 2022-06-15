@@ -12,6 +12,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 
+class PassedData {
+    boolean showAll = false;
+
+    StudentData studentData = new StudentData();
+}
+
 public class StudentController {
     @FXML
     protected TextField enrollmentNumInput;
@@ -23,11 +29,24 @@ public class StudentController {
     protected TextField skillAssetInput;
 
     @FXML
-    protected void onFindButtonClick(ActionEvent event) {
+    protected void onFindButtonClick(ActionEvent event) throws IOException {
         System.out.println("onFindButtonClick");
 
-        Connection connection = DBUtilities.getConnection();
-        System.out.println(connection);
+        Stage stage;
+        Parent root;
+        stage=(Stage) ((Button)(event.getSource())).getScene().getWindow();
+
+        PassedData data = new PassedData();
+        data.studentData.setEnrollmentNum(enrollmentNumInput.getText());
+        data.studentData.setMarks(Integer.parseInt(marksInput.getText()));
+        data.studentData.setSkillAsset(skillAssetInput.getText());
+
+        stage.setUserData(data);
+
+        root = FXMLLoader.load(getClass().getResource("company-suggestions.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void onSeeAllButtonClick(ActionEvent event) throws IOException {
@@ -36,6 +55,12 @@ public class StudentController {
         Stage stage;
         Parent root;
         stage=(Stage) ((Button)(event.getSource())).getScene().getWindow();
+
+        PassedData data = new PassedData();
+        data.showAll = true;
+
+        stage.setUserData(data);
+
         root = FXMLLoader.load(getClass().getResource("company-suggestions.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
